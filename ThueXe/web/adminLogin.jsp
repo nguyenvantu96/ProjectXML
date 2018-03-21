@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 
@@ -88,15 +89,16 @@
   </style>
 </head>
 <body>
-  <form action="/admin/authen" method="POST">
+  <form action="/LoginWithAccountAdmin" method="POST">
+     <input type="hidden" name="a" value="login">
     <div class="login-form">
         <h1>ADMIN</h1>
         <div class="form-group ">
-          <input type="text" class="form-control" placeholder="Username " name="uname" />
+          <input type="text" class="form-control" placeholder="Username " name="${param.username}" />
           <i class="fa fa-user"></i>
         </div>
         <div class="form-group log-status">
-          <input type="password" class="form-control" placeholder="Password" name="passwd" />
+          <input type="password" class="form-control" placeholder="Password" name="${param.password}" />
           <i class="fa fa-lock"></i>
         </div>
         <span class="alert">Invalid Credentials</span>
